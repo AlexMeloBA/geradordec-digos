@@ -1,7 +1,5 @@
-# Apresentação de projetos
+# Gerador de Códigos
 
-Site que apresenta os projetos concluídos e em andamento no 4º CGEO de forma espacial.
+Sistema de Geração de Códigos para Produtos Cartográficos.
 
 https://4cgeo-projetos.github.io/Projetos/
-
-Para tutorial de como configurar acesse a [wiki](https://github.com/1cgeo/projetos/wiki).
