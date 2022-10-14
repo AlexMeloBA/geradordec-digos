@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div  class="navbar-header">
+	      <a id="navTitle" class="navbar-brand" href="index.html">></a>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="form-inline">
+			<div class="form-group">
+				<select type="" class="form-control" id="tiprd" placeholder="Tipo de Produto">
+					<option value="" >Selecione o Produto</option>
+    				<option value="PGB#1" >Ortoimagem</option>
+    				<option value="PGB#2" >Modelo Digital de Elevação (MDS+MDT)</option>
+    				<option value="PGB#3" >Dados Geoespaciais Vetoriais</option>
+					<option value="PGB#4" >Carta Topográfica</option>
+    				<option value="PGB#5" >Carta Ortoimagem</option>
+					<option value="PGT#1" >Mapa de Unidades</option>
+    				<option value="PGT#2" >Unidades do Exército Brasileiro</option>
+    				<option value="PGT#3" >Carta de Trafegabilidade</option>
+					<option value="PGT#4" >Rede de Transporte</option>
+    				<option value="PGT#5" >Mapa de Geografia Humana</option>
+					<option value="SVG#1" >Serviços Web</option>
+    				<option value="SVG#2" >Capacitação em Geoinformação</option>
+    				<option value="SVG#3" >Controle de Qualidade</option>
+					<option value="SVG#4" >Levantamento de Área Patrimonial</option>
+    				<option value="SVG#5" >SVG Impressão</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="desc" placeholder="Quantidade Produzida">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="amount" placeholder="Quantidade Impressa">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" id="value" placeholder="Escala 10.000">
+			</div>
+			<span id="btnUpdate" style="display: none;">
+				<span id="inputIDUpdate"></span>
+				<button onclick="updateData();" class="btn btn-default">Save</button>
+				<button onclick="resetForm();" class="btn btn-default">Cancel</button>
+			</span>
+			<span id="btnAdd">
+				<button onclick="addData();" class="btn btn-primary">Adicionar</button>
+				<button onclick="resetForm();" class="btn btn-info">Redefinir</button>
+				<button onclick="deleteList();" class="btn btn-danger">Excluir lista</button>
+			</span>
+		</div>
+
+		<div id="errors" style="display: none;"></div>
+
+		<table id="listTable" class="table">
+		
+		</table>
+	</div>
+
+	
+	<div class="container">
+		<h4 class="text-center text-success">REFERÊNCIAS:  </h4>
+		<h6 class="text-center text-success">
+			<P><b>Produtos Geoespaciais Básicos (PGB):</b></P>
+				<b>PGB#1</b> = Ortoimagem,
+				<b>PGB#2</b> = Modelo Digital de Elevação (MDS+MDT),
+				<b>PGB#3</b> = Dados Geoespaciais Vetoriais,
+				<b>PGB#4</b> = Carta Topográfica,
+				<b>PGB#5</b> = Carta Ortoimagem</P>
+			<P><b>Produtos Geoespaciais Temáticos (PGT):</b></P>
+				<b>PGT#1</b> = Mapa de Unidades,
+				<b>PGT#2</b> = Unidades do Exército Brasileiro,
+				<b>PGT#3</b> = Carta de Trafegabilidade,
+				<b>PGT#4</b> = Rede de Transporte,
+				<b>PGT#5</b> = Mapa de Geografia Humana</P>
+			<P><b>Serviços de Geoinformação (SVG):</b></P>
+				<b>SVG#1</b> = Serviços Web,
+				<b>SVG#2</b> = Capacitação em Geoinformação,
+				<b>SVG#3</b> = Controle de Qualidade,
+				<b>SVG#4</b> = Levantamento de Área Patrimonial,
+				<b>SVG#5</b> = Impressão</P>
+		</h6>
+	</div>
+	
+	<nav class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<h4 class="text-center text-success">Código: <span id="totalValue">&&</span><button onclick="execCopy()" class="btn btn-success">Copiar</button></h4>
+		</div>
+	</nav>
+
+	<script type="text/javascript" src="js/config.js?vs=07"></script>
+	<script type="text/javascript" src="js/main.js?vs=07"></script>
+</body>
+</html>
